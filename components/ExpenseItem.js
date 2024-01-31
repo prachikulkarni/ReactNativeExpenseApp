@@ -17,8 +17,8 @@ function ExpenseItem({ id, description, amount, date }) {
     >
       <View style={style.container}>
         <Text style={style.descriptionStyle}>{description}</Text>
-        <Text style={style.amountStyle}>${amount.toFixed(2)}</Text>
-        <Text style={style.dateStyle}>Date is:{getFormattedDate(date)}</Text>
+        <Text style={style.amountStyle}>${Number(amount).toFixed(2)}</Text>
+        {/* <Text style={style.dateStyle}>Date is:{getFormattedDate(date)}</Text> */}
       </View>
     </Pressable>
   );
@@ -45,6 +45,9 @@ const style = StyleSheet.create({
     color: "black",
   },
   amountStyle: {
+    marginEnd:10,
+    position: 'absolute',
+     right:0,
     color: "black",
     fontSize: 19,
   },

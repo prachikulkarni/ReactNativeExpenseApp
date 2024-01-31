@@ -1,8 +1,11 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import ExpensesOutput from "../components/ExpensesOutput";
-import { EXPENSE } from "../data/dummy-data";
+
+import { useSelector } from "react-redux";
 
 function RecentExpense({ navigation }) {
+  const currentdata =  useSelector((state) => state.expenseManager.expense)
+  
   function handleClick() {
     navigation.navigate("ManageExpense");
   }
@@ -10,7 +13,7 @@ function RecentExpense({ navigation }) {
   return (
     <View style={styles.outerContainer}>
       <ExpensesOutput
-        expenses={EXPENSE}
+        expenses={currentdata}
         periodName={"Last 7 days"}
       ></ExpensesOutput>
     </View>

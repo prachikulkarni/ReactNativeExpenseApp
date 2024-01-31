@@ -10,6 +10,8 @@ import { Ionicons } from "@expo/vector-icons";
 import IconButton from "./components/IconButton";
 import { GlabalStyle } from "./constants/styles";
 import { Button, Text } from "react-native";
+import { Provider } from "react-redux";
+import { store } from "./store/reduxStore";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -58,6 +60,7 @@ function ExpenseOverview() {
 export default function App() {
   return (
     <>
+    <Provider store={store}>
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator
@@ -81,6 +84,7 @@ export default function App() {
           ></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
+      </Provider>
     </>
   );
 }

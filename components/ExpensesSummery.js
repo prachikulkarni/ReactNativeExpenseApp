@@ -9,7 +9,7 @@ function ExpensesSummery({ periodName, expenses }) {
   return (
     <View style={styles.outerContainer}>
       <Text style={styles.period}>{periodName}</Text>
-      <Text style={styles.sum}>${expenseSum.toFixed(2)}</Text>
+      <Text style={styles.sum}>${Number(expenseSum).toFixed(2)}</Text>
     </View>
   );
 }
